@@ -5,12 +5,22 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/go-ozzo/ozzo-validation/v4/is"
+	"github.com/google/uuid"
 )
+
+//go:generate mockgen -destination=./mocks/application.go -source=./product.go
 
 const (
 	DISABLE = "disabled"
 	ENABLE  = "enabled"
 )
+
+type Product struct {
+	ID     string
+	Name   string
+	Price  float64
+	Status string
+}
 
 type IProduct interface {
 	IsValid() (bool, error)
@@ -18,11 +28,31 @@ type IProduct interface {
 	Disable() error
 }
 
-type Product struct {
-	ID     string
-	Name   string
-	Price  float64
-	Status string
+type IProductService interface {
+	Get(ID string) (IProduct, error)
+	Create(name string, price float64) (IProduct, error)
+	Enable(product ProductService) (IProduct, error)
+	Disable(product ProductService) (IProduct, error)
+}
+
+type ProductReader interface {
+	Get(ID string) (IProduct, error)
+}
+
+type ProductWriter interface {
+	Save(product IProduct) (IProduct, error)
+}
+
+type ProductPersistenceInterface interface {
+	ProductReader
+	ProductWriter
+}
+
+func NewProduct() *Product {
+	return &Product{
+		ID:     uuid.NewString(),
+		Status: DISABLE,
+	}
 }
 
 func (p Product) IsValid() (bool, error) {

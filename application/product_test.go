@@ -1,16 +1,17 @@
-package application
+package application_test
 
 import (
 	"testing"
 
+	"github.com/ffelipelimao/ports-adapters-architeture/application"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestProduct_Enable(t *testing.T) {
-	product := Product{
+	product := application.Product{
 		Name:   "Hello",
-		Status: DISABLE,
+		Status: application.DISABLE,
 		Price:  10,
 	}
 
@@ -23,9 +24,9 @@ func TestProduct_Enable(t *testing.T) {
 }
 
 func TestProduct_Disable(t *testing.T) {
-	product := Product{
+	product := application.Product{
 		Name:   "Hello",
-		Status: ENABLE,
+		Status: application.ENABLE,
 		Price:  0,
 	}
 
@@ -38,10 +39,10 @@ func TestProduct_Disable(t *testing.T) {
 }
 
 func TestProduct_IsValid(t *testing.T) {
-	product := Product{
+	product := application.Product{
 		ID:     uuid.NewString(),
 		Name:   "Hello",
-		Status: DISABLE,
+		Status: application.DISABLE,
 		Price:  float64(10),
 	}
 
@@ -52,7 +53,7 @@ func TestProduct_IsValid(t *testing.T) {
 	_, err = product.IsValid()
 	assert.Equal(t, "must be enable or disable", err.Error())
 
-	product.Status = ENABLE
+	product.Status = application.ENABLE
 	product.Price = 0
 	_, err = product.IsValid()
 	assert.Equal(t, "Price: must be greater than zero.", err.Error())
