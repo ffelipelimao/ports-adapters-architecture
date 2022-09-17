@@ -23,6 +23,10 @@ type Product struct {
 }
 
 type IProduct interface {
+	GetID() string
+	GetName() string
+	GetStatus() string
+	GetPrice() float64
 	IsValid() (bool, error)
 	Enable() error
 	Disable() error
@@ -90,4 +94,20 @@ func (p *Product) Disable() error {
 		return nil
 	}
 	return errors.New("the price should be zero to disable product")
+}
+
+func (p *Product) GetID() string {
+	return p.ID
+}
+
+func (p *Product) GetName() string {
+	return p.Name
+}
+
+func (p *Product) GetStatus() string {
+	return p.Status
+}
+
+func (p *Product) GetPrice() float64 {
+	return p.Price
 }

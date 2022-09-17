@@ -62,6 +62,62 @@ func (mr *MockIProductMockRecorder) Enable() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Enable", reflect.TypeOf((*MockIProduct)(nil).Enable))
 }
 
+// GetID mocks base method.
+func (m *MockIProduct) GetID() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetID")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// GetID indicates an expected call of GetID.
+func (mr *MockIProductMockRecorder) GetID() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetID", reflect.TypeOf((*MockIProduct)(nil).GetID))
+}
+
+// GetName mocks base method.
+func (m *MockIProduct) GetName() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetName")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// GetName indicates an expected call of GetName.
+func (mr *MockIProductMockRecorder) GetName() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetName", reflect.TypeOf((*MockIProduct)(nil).GetName))
+}
+
+// GetPrice mocks base method.
+func (m *MockIProduct) GetPrice() float64 {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetPrice")
+	ret0, _ := ret[0].(float64)
+	return ret0
+}
+
+// GetPrice indicates an expected call of GetPrice.
+func (mr *MockIProductMockRecorder) GetPrice() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetPrice", reflect.TypeOf((*MockIProduct)(nil).GetPrice))
+}
+
+// GetStatus mocks base method.
+func (m *MockIProduct) GetStatus() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetStatus")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// GetStatus indicates an expected call of GetStatus.
+func (mr *MockIProductMockRecorder) GetStatus() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetStatus", reflect.TypeOf((*MockIProduct)(nil).GetStatus))
+}
+
 // IsValid mocks base method.
 func (m *MockIProduct) IsValid() (bool, error) {
 	m.ctrl.T.Helper()
