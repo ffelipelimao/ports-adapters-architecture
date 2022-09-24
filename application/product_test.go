@@ -3,7 +3,7 @@ package application_test
 import (
 	"testing"
 
-	"github.com/ffelipelimao/ports-adapters-architeture/application"
+	"github.com/ffelipelimao/ports-adapters-architecture/application"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )

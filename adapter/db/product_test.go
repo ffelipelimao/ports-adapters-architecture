@@ -5,8 +5,8 @@ import (
 	"log"
 	"testing"
 
-	"github.com/ffelipelimao/ports-adapters-architeture/adapter/db"
-	"github.com/ffelipelimao/ports-adapters-architeture/application"
+	"github.com/ffelipelimao/ports-adapters-architecture/adapter/db"
+	"github.com/ffelipelimao/ports-adapters-architecture/application"
 	"github.com/stretchr/testify/assert"
 )
 

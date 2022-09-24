@@ -3,8 +3,8 @@ package application_test
 import (
 	"testing"
 
-	"github.com/ffelipelimao/ports-adapters-architeture/application"
-	mock_application "github.com/ffelipelimao/ports-adapters-architeture/application/mocks"
+	"github.com/ffelipelimao/ports-adapters-architecture/application"
+	mock_application "github.com/ffelipelimao/ports-adapters-architecture/application/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

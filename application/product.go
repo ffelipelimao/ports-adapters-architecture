@@ -35,8 +35,8 @@ type IProduct interface {
 type IProductService interface {
 	Get(ID string) (IProduct, error)
 	Create(name string, price float64) (IProduct, error)
-	Enable(product ProductService) (IProduct, error)
-	Disable(product ProductService) (IProduct, error)
+	Enable(product IProduct) (IProduct, error)
+	Disable(product IProduct) (IProduct, error)
 }
 
 type ProductReader interface {

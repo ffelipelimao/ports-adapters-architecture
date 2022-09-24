@@ -7,7 +7,7 @@ package mock_application
 import (
 	reflect "reflect"
 
-	application "github.com/ffelipelimao/ports-adapters-architeture/application"
+	application "github.com/ffelipelimao/ports-adapters-architecture/application"
 	gomock "github.com/golang/mock/gomock"
 )
 
@@ -172,7 +172,7 @@ func (mr *MockIProductServiceMockRecorder) Create(name, price interface{}) *gomo
 }
 
 // Disable mocks base method.
-func (m *MockIProductService) Disable(product application.ProductService) (application.IProduct, error) {
+func (m *MockIProductService) Disable(product application.IProduct) (application.IProduct, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Disable", product)
 	ret0, _ := ret[0].(application.IProduct)
@@ -187,7 +187,7 @@ func (mr *MockIProductServiceMockRecorder) Disable(product interface{}) *gomock.
 }
 
 // Enable mocks base method.
-func (m *MockIProductService) Enable(product application.ProductService) (application.IProduct, error) {
+func (m *MockIProductService) Enable(product application.IProduct) (application.IProduct, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Enable", product)
 	ret0, _ := ret[0].(application.IProduct)

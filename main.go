@@ -1,15 +1,10 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+*/
 package main
 
-import (
-	"database/sql"
-
-	"github.com/ffelipelimao/ports-adapters-architeture/adapter/db"
-	"github.com/ffelipelimao/ports-adapters-architeture/application"
-)
+import "github.com/ffelipelimao/ports-adapters-architecture/cmd"
 
 func main() {
-	DB, _ := sql.Open("sqlite3", "db.sqlite")
-	productDBAdapter := db.NewProductDB(DB)
-	productService := application.NewProductService(productDBAdapter)
-	productService.Create("product example", 30)
+	cmd.Execute()
 }

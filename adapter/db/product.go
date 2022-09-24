@@ -3,7 +3,7 @@ package db
 import (
 	"database/sql"
 
-	"github.com/ffelipelimao/ports-adapters-architeture/application"
+	"github.com/ffelipelimao/ports-adapters-architecture/application"
 	_ "github.com/mattn/go-sqlite3"
 )
 
